@@ -5,3 +5,4 @@ urlpatterns = [
     path('', views.index ),
     path('zk_sync/', views.zk_sync_html, name='zk_sync_html'),
 ]
+
