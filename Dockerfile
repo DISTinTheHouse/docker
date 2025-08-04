@@ -31,10 +31,9 @@ COPY . .
 WORKDIR /app/frontend
 
 # Instalar dependencias del frontend
-RUN npm install
-
-# Compilar React (esto genera static/frontend/main.js)
-RUN npx webpack
+RUN npm install \
+    && chmod +x ./node_modules/.bin/webpack \
+    && ./node_modules/.bin/webpack
 
 # --- Volver al root del proyecto para correr Django ---
 WORKDIR /app
