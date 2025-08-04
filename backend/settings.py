@@ -27,7 +27,7 @@ DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
 #ALLOWED_HOSTS = ['docker-czvy.onrender.com']
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',') if not DEBUG else []
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',') if not DEBUG else ['*']
 
 
 # Application definition
