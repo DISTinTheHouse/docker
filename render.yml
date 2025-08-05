@@ -6,7 +6,8 @@ services:
     branch: main
     buildCommand: |
       pip install -r requirements.txt
-      cd frontend && npm install && npx webpack
+      cd frontend && npm install && npm run build
+      python manage.py collectstatic --noinput
     startCommand: gunicorn backend.wsgi:application
     autoDeploy: true
     envVars:
