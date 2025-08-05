@@ -56,7 +56,7 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000", 
     "http://127.0.0.1:3000",
-    "https://docker-gtxf.onrender.com",
+    "https://django-react-wfuu.onrender.com",
 ]
 
 ROOT_URLCONF = 'backend.urls'
