@@ -20,14 +20,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', 'insegura')
-
+SECRET_KEY = 'django-insecure-xtek03f7-$ufdit4(j#j4%pftvu$9wt#z!6*sr#*4m!139+%wf'
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', 'True') == 'True'
+DEBUG = True
 
-#ALLOWED_HOSTS = ['docker-czvy.onrender.com']
-
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',') if not DEBUG else ['*']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -58,7 +55,8 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000", 
-    "http://127.0.0.1:3000"
+    "http://127.0.0.1:3000",
+    "https://docker-gtxf.onrender.com",
 ]
 
 ROOT_URLCONF = 'backend.urls'

@@ -1,22 +1,12 @@
 services:
   - type: web
     name: erp-backend
-    env: docker
+    env: python
     plan: free
     branch: main
-    dockerfilePath: ./Dockerfile
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn backend.wsgi:application
     autoDeploy: true
-    healthCheckPath: /
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: backend.settings
-      - key: PYTHONDONTWRITEBYTECODE
-        value: "1"
-      - key: PYTHONUNBUFFERED
-        value: "1"
-      - key: ALLOWED_HOSTS
-        value: erp-crm-dev-latest.onrender.com/
-      - key: DEBUG
-        value: "False"
-      - key: SECRET_KEY
-        value: django-insecure-xtek03f7-$ufdit4(j#j4%pftvu$9wt#z!6*sr#*4m!139+%wf
